@@ -83,6 +83,6 @@ public class OpenApiConfig {
         logger.info("tittle: {}", tittle);
         logger.info("description: {}", description);
         logger.info("version: {}", version);
-        logger.info("Url Swagger: {}", devUri + "/swagger-ui/index.html");
+        logger.info("Url Swagger: {}", devUri + "swagger-ui/index.html");
     }
 }
