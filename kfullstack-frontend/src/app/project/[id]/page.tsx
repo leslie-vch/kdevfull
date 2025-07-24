@@ -17,6 +17,8 @@ import { useLoadingStore } from "@/store/useLoadingStore";
 import { Project, Task } from "@/types/Global";
 import { useUserRole } from "@/hooks/useUserRole";
 
+type TaskStatus = "PENDING" | "IN_PROGRESS" | "DONE";
+
 export default function ProjectDetailPage() {
   const { id } = useParams();
   const router = useRouter();
@@ -99,7 +101,14 @@ export default function ProjectDetailPage() {
     }
   };
 
-  const handleCreateTask = async (task: any) => {
+  const handleCreateTask = async (task: {
+    title: string;
+    description: string;
+    dueDate: string;
+    status: TaskStatus;
+    assignedToId: number | null;
+    projectId?: number;
+  }) => {
     const token = localStorage.getItem("token");
     if (!token || !id) return;
 
@@ -122,7 +131,14 @@ export default function ProjectDetailPage() {
     }
   };
 
-  const handleUpdateTask = async (taskData: any) => {
+  const handleUpdateTask = async (taskData: {
+    title: string;
+    description: string;
+    dueDate: string;
+    status: TaskStatus;
+    assignedToId: number | null;
+    projectId?: number;
+  }) => {
     const token = localStorage.getItem("token");
     if (!token || !id || !editingTask) return;
 

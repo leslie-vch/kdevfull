@@ -45,13 +45,13 @@ class AuthServiceTest {
     @Test
     void shouldLoginSuccessfully() {
         AuthRequest request = new AuthRequest();
-        request.setUsername("ken");
+        request.setUsername("les");
         request.setPassword("123");
 
         UserEntity user = UserEntity.builder()
-                .id(1L).username("ken").password("encoded").role(RoleEnum.ADMIN).build();
+                .id(1L).username("les").password("encoded").role(RoleEnum.ADMIN).build();
 
-        when(userRepository.findByUsername("ken")).thenReturn(Optional.of(user));
+        when(userRepository.findByUsername("les")).thenReturn(Optional.of(user));
         when(jwtUtil.generateToken(user)).thenReturn("mocked-jwt");
 
         AuthResponse response = authService.login(request);
@@ -63,13 +63,13 @@ class AuthServiceTest {
     @Test
     void shouldRegisterNewUser() {
         RegisterRequest request = new RegisterRequest();
-        request.setUsername("ken");
-        request.setEmail("ken@sasf.net");
+        request.setUsername("les");
+        request.setEmail("les@sasf.net");
         request.setPassword("123");
         request.setRole(RoleEnum.USER);
 
-        when(userRepository.existsByUsername("ken")).thenReturn(false);
-        when(userRepository.existsByEmail("ken@sasf.net")).thenReturn(false);
+        when(userRepository.existsByUsername("les")).thenReturn(false);
+        when(userRepository.existsByEmail("les@sasf.net")).thenReturn(false);
         when(passwordEncoder.encode("123")).thenReturn("encoded");
         when(jwtUtil.generateToken(any())).thenReturn("jwt-token");
 

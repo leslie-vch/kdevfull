@@ -84,7 +84,7 @@ export default function Navbar() {
           onClick={handleCreateUser}
           className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-500"
         >
-          Crear Usuario
+          Crear 5 Usuario Ramdon
         </button>
 
         <button

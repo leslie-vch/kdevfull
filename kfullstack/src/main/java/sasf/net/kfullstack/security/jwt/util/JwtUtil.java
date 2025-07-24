@@ -5,6 +5,7 @@ import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import sasf.net.kfullstack.model.UserEntity;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
@@ -13,8 +14,11 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-    private final String SECRET_KEY = "kruger-fullstack-jwt-secret-key-super-safe"; 
-    private final long EXPIRATION_TIME = 86400000; // 1 día
+    @Value("${security.jwt.secret}")
+    private String SECRET_KEY;
+
+    @Value("${security.jwt.expiration}")
+    private long EXPIRATION_TIME;
 
     private Key getKey() {
         return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());

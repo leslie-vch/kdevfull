@@ -33,12 +33,12 @@ class TaskServiceTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        user = UserEntity.builder().id(1L).username("ken").build();
+        user = UserEntity.builder().id(1L).username("les").build();
         project = ProjectEntity.builder().id(10L).owner(user).build();
-        when(userRepository.findByUsername("ken")).thenReturn(Optional.of(user));
+        when(userRepository.findByUsername("les")).thenReturn(Optional.of(user));
         org.springframework.security.core.context.SecurityContextHolder
                 .getContext().setAuthentication(
-                        new org.springframework.security.authentication.UsernamePasswordAuthenticationToken("ken", null,
+                        new org.springframework.security.authentication.UsernamePasswordAuthenticationToken("les", null,
                                 java.util.Collections.emptyList()));
     }
 
