@@ -121,7 +121,7 @@ public class TaskService {
         log.info("Actualizando tarea ID {} del usuario '{}'", id, user.getUsername());
 
         return taskRepository.findById(id)
-                // .filter(t -> t.getAssignedTo().getId().equals(user.getId()))
+                
                 .map(task -> {
                     log.debug("Tarea encontrada, actualizando campos");
                     task.setTitle(request.getTitle());

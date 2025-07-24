@@ -34,7 +34,7 @@ type FormData = {
   description: string;
   dueDate: string;
   status: TaskStatus;
-  assignedToId: string; // mantendremos string para el select
+  assignedToId: string; 
 };
 
 export default function TaskModal({

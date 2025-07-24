@@ -75,14 +75,14 @@ class TaskServiceTest {
 
     @Test
     void shouldUpdateOwnedTask() {
-        ProjectEntity project = ProjectEntity.builder().id(10L).owner(user).build(); // se necesita para
-                                                                                     // .getProject().getId()
+        ProjectEntity project = ProjectEntity.builder().id(10L).owner(user).build(); 
+                                                                                     
 
         TaskEntity task = TaskEntity.builder()
                 .id(1L)
                 .assignedTo(user)
                 .title("Old")
-                .project(project) // ← ¡esto es clave!
+                .project(project)
                 .build();
 
         when(taskRepository.findById(1L)).thenReturn(Optional.of(task));

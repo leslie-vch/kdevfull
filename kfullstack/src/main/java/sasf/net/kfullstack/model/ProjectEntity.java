@@ -26,12 +26,10 @@ public class ProjectEntity {
 
     private LocalDateTime createdAt;
 
-    // Relación con usuario dueño
     @ManyToOne
     @JoinColumn(name = "owner_id", nullable = false)
     private UserEntity owner;
 
-    // Relación con tareas
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TaskEntity> tasks;
 

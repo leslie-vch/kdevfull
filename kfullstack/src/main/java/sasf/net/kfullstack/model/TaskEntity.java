@@ -41,8 +41,7 @@ public class TaskEntity {
     @ManyToOne
     @JoinColumn(name = "assigned_to", nullable = false)
     private UserEntity assignedTo;
-
-    // Relación con el proyecto
+    
     @ManyToOne
     @JoinColumn(name = "project_id", nullable = false)
     private ProjectEntity project;

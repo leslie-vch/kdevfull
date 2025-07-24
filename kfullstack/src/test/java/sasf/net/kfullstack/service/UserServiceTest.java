@@ -32,7 +32,7 @@ class UserServiceTest {
 
     @Test
     void shouldCreateUserSuccessfully() {
-        // Arrange
+    
         RegisterRequest request = new RegisterRequest();
         request.setUsername("ken");
         request.setEmail("ken@sasf.net");
@@ -53,10 +53,8 @@ class UserServiceTest {
 
         when(userRepository.save(any(UserEntity.class))).thenReturn(savedUser);
 
-        // Act
         UserResponse response = userService.createUser(request);
 
-        // Assert
         assertNotNull(response);
         assertEquals("ken", response.getUsername());
         assertEquals("ken@sasf.net", response.getEmail());

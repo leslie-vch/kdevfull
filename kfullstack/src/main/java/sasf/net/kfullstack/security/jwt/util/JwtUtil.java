@@ -13,7 +13,7 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-    private final String SECRET_KEY = "kruger-fullstack-jwt-secret-key-super-safe"; // Debe tener al menos 256 bits
+    private final String SECRET_KEY = "kruger-fullstack-jwt-secret-key-super-safe"; 
     private final long EXPIRATION_TIME = 86400000; // 1 día
 
     private Key getKey() {

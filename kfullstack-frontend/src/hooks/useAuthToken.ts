@@ -1,4 +1,4 @@
-// src/hooks/useAuthToken.ts
+
 import { useEffect, useState } from "react";
 
 export default function useAuthToken() {

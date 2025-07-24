@@ -49,7 +49,7 @@ public class UserService {
         List<UserEntity> newUsers = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
-            String uniqueId = UUID.randomUUID().toString().substring(0, 8); // Mover aquí
+            String uniqueId = UUID.randomUUID().toString().substring(0, 8);
 
             UserEntity user = UserEntity.builder()
                     .username("user" + uniqueId)

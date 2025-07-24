@@ -1,4 +1,4 @@
-// src/hooks/useUserRole.ts
+
 import { useEffect, useState } from "react";
 
 export function useUserRole(defaultRole = "USER") {

@@ -34,7 +34,7 @@ class ProjectServiceTest {
         MockitoAnnotations.openMocks(this);
         user = UserEntity.builder().id(1L).username("ken").build();
         when(userRepository.findByUsername("ken")).thenReturn(Optional.of(user));
-        // simula autenticación
+       
         org.springframework.security.core.context.SecurityContextHolder
                 .getContext().setAuthentication(
                         new org.springframework.security.authentication.UsernamePasswordAuthenticationToken("ken", null,

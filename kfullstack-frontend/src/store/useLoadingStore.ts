@@ -1,4 +1,4 @@
-// src/store/useLoadingStore.ts
+
 import { create } from "zustand";
 
 type LoadingStore = {
